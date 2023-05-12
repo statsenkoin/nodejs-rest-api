@@ -6,10 +6,11 @@ const HttpError = require('../../helpers');
 const router = express.Router();
 
 /**
- * Available formats:
+ * Valid formats:
  * name: ordinary string,
  * email: statdart email,
- * phone: (012) 123 45 67, (012)-123-45-67, (012) 123-4567, (012)1234567
+ * phone: (nnn)['-'|' ']nnn['-'|' ']nn['-'|' ']nn
+ * (012) 123 45 67, (012)-123-45-67, (012) 123-4567, (012)1234567
  */
 const addSchema = Joi.object({
   name: Joi.string().required(),
